@@ -1,0 +1,7 @@
+ERROR:root:Error occurred at2021-05-10 02:25:34.318675:Sorry, no numbers below zero
+Traceback (most recent call last):
+  File "c:\AJINKYA\Projects\VaccineTracker\VaccineTracker\VaccineTracker.py", line 39, in call_cowin_APi
+    url = self.getUrl()
+  File "c:\AJINKYA\Projects\VaccineTracker\VaccineTracker\VaccineTracker.py", line 31, in getUrl
+    raise Exception("Sorry, no numbers below zero")
+Exception: Sorry, no numbers below zero
