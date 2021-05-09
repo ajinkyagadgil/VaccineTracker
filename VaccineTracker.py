@@ -19,9 +19,6 @@ class Telegram_Alert:
 
 
 class CowinVaccination:
-    def _json_object_hook(self, d): 
-        return namedtuple('X', d.keys())(*d.values())
-
     def get_default_headers(self) -> dict:
         return {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0"}
 
