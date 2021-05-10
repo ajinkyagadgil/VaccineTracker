@@ -50,6 +50,7 @@ class CowinVaccination:
                                         "Fee type:" + str(center.fee_type) + "\n"
                                         "Vaccine:" + str(session.vaccine) + "\n"
                                         )
+                                        
                                 telegram_alert.telegram_bot_sendAlert(alert_message)
         except Exception  as e:
              logging.exception('Error occurred at' +str(datetime.today()) +":" + str(e))
