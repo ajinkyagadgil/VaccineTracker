@@ -50,16 +50,16 @@ class CowinVaccination:
                                         "Fee type:" + str(center.fee_type) + "\n"
                                         "Vaccine:" + str(session.vaccine) + "\n"
                                         )
-                                        
+
                                 telegram_alert.telegram_bot_sendAlert(alert_message)
         except Exception  as e:
              logging.exception('Error occurred at' +str(datetime.today()) +":" + str(e))
 
-            
-
-
-if __name__ == "__main__":
+def main():
     c = CowinVaccination()
     while True:
         c.call_cowin_APi()
         time.sleep(60)
+
+if __name__ == "__main__":
+    main()
