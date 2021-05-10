@@ -1,1 +1,1 @@
-web: python VaccineTracker.py
+web:gunicorn
