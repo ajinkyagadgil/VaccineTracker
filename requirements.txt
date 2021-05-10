@@ -1,6 +1,1 @@
-requests
-json
-datetime
-List
-SimpleNamespace
-logging
+requests==2.25.1
