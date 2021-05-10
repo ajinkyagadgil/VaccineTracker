@@ -4,6 +4,7 @@ from datetime import datetime
 from typing import List
 from types import SimpleNamespace
 import logging
+import time
 
 logging.basicConfig(filename='app.log',level=logging.INFO)
 
@@ -58,4 +59,6 @@ class CowinVaccination:
 
 if __name__ == "__main__":
     c = CowinVaccination()
-    c.call_cowin_APi()
+    while True:
+        c.call_cowin_APi()
+        time.sleep(10)
