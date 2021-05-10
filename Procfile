@@ -1,1 +1,1 @@
-web: gunicorn VaccineTracker:main
+web: gunicorn VaccineTracker:app
