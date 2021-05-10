@@ -1,1 +1,1 @@
-web: gunicorn VaccineTracker.py:main()
+web: gunicorn VaccineTracker:main
