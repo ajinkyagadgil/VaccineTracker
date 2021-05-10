@@ -1,2 +1,2 @@
-web: web: python VaccineTracker.py
+web: python VaccineTracker.py
 worker: python VaccineTracker.py 
