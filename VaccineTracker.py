@@ -61,5 +61,10 @@ def main():
         c.call_cowin_APi()
         time.sleep(60)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
+
+c = CowinVaccination()
+while True:
+    c.call_cowin_APi()
+    time.sleep(60)
