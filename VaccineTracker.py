@@ -40,7 +40,7 @@ class CowinVaccination:
                 for center in centers.centers:
                     if center.sessions:
                         for session in center.sessions:
-                            if session.min_age_limit == 18 and session.available_capacity > 0:
+                            if session.min_age_limit == 18:
                                 alert_message = ("Min Age:" +str(session.min_age_limit) + "\n"
                                         "Center Name:"+ str(center.name) +"\n"
                                         "Pin Code:" + str(center.pincode) + "\n"
