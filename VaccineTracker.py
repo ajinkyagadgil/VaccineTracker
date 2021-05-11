@@ -61,4 +61,4 @@ if __name__ == "__main__":
     c = CowinVaccination()
     while True:
         c.call_cowin_APi()
-        time.sleep(60)
+        time.sleep(5)
