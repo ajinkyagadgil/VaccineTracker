@@ -1,5 +1,5 @@
 import requests
-import flask
+from flask import Flask
 import json
 from datetime import datetime
 from typing import List
@@ -7,9 +7,9 @@ from types import SimpleNamespace
 import logging
 import time
 
-logging.basicConfig(filename='app.log',level=logging.INFO)
+app = Flask(__name__)
 
-app = flask.Flask(__name__)
+logging.basicConfig(filename='app.log',level=logging.INFO)
 
 class Telegram_Alert:
     def telegram_bot_sendAlert(self, bot_message):
@@ -53,18 +53,21 @@ class CowinVaccination:
                                         "Fee type:" + str(center.fee_type) + "\n"
                                         "Vaccine:" + str(session.vaccine) + "\n"
                                         )
-
                                 telegram_alert.telegram_bot_sendAlert(alert_message)
         except Exception  as e:
              logging.exception('Error occurred at' +str(datetime.today()) +":" + str(e))
 
-
-@app.route('/', methods=['GET'])
-def main():
-    print("Vaccine Tracker")
+            
+@app.route("/")
+def home():
     c = CowinVaccination()
     while True:
         c.call_cowin_APi()
         time.sleep(60)
 
 app.run()
+# if __name__ == "__main__":
+#     c = CowinVaccination()
+#     while True:
+#         c.call_cowin_APi()
+#         time.sleep(60)
