@@ -1,13 +1,10 @@
 import requests
-from flask import Flask
 import json
 from datetime import datetime
 from typing import List
 from types import SimpleNamespace
 import logging
 import time
-
-app = Flask(__name__)
 
 logging.basicConfig(filename='app.log',level=logging.INFO)
 
@@ -44,7 +41,7 @@ class CowinVaccination:
                 for center in centers.centers:
                     if center.sessions:
                         for session in center.sessions:
-                            if session.min_age_limit == 18:
+                            if session.min_age_limit == 18 and session.available_capacity > 0:
                                 alert_message = ("Min Age:" +str(session.min_age_limit) + "\n"
                                         "Center Name:"+ str(center.name) +"\n"
                                         "Pin Code:" + str(center.pincode) + "\n"
@@ -58,16 +55,10 @@ class CowinVaccination:
              logging.exception('Error occurred at' +str(datetime.today()) +":" + str(e))
 
             
-@app.route("/")
-def home():
+
+
+if __name__ == "__main__":
     c = CowinVaccination()
     while True:
         c.call_cowin_APi()
         time.sleep(60)
-
-app.run()
-# if __name__ == "__main__":
-#     c = CowinVaccination()
-#     while True:
-#         c.call_cowin_APi()
-#         time.sleep(60)
