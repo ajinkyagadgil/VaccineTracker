@@ -10,8 +10,8 @@ logging.basicConfig(filename='app.log',level=logging.INFO)
 
 class Telegram_Alert:
     def telegram_bot_sendAlert(self, bot_message):
-        bot_token = '1726050183:AAGsjhZup42pobeG3f-sdxCZ886ikP4el2Q'
-        bot_chatID = '-1001403785719'
+        bot_token = 'token'
+        bot_chatID = 'chatid'
 
         send_text = 'https://api.telegram.org/bot'+bot_token+'/sendMessage?chat_id=' +bot_chatID +'&text=' +bot_message
         response = requests.get(send_text)
